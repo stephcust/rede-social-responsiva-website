@@ -1,0 +1,1 @@
+Projeto de website responsivo e personalizado utilizando HTML, CSS e JavaScript
