@@ -415,8 +415,9 @@ main .container .left .profile{
 }
 
 /* Solicitações */
-/* .right .friend-requests{
+.right .friend-requests{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
-} */
+    margin-top: 1rem;
+}
