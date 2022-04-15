@@ -406,6 +406,13 @@ main .container .left .profile{
     margin-bottom: 1rem;
     align-items: start;
 }
+.right .messages .profile-photo{
+    position: relative;
+    overflow: visible;
+}
+.right .messages .profile-photo img{
+    border-radius: 50%;
+}
 
 .right .messages .message:last-child{
     margin: 0;
@@ -413,11 +420,44 @@ main .container .left .profile{
 .right .messages .message p{
     font-size: 0.8rem;
 }
+.right .messages .message .profile-photo .online{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    background: var(--color-success);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.right .messages .message-requests{
+    color: var(--color-primary);
+}
 
-/* Solicitações */
+/* Solicitações de Amizade*/
 .right .friend-requests{
+    margin-top: 1rem;
+}
+.right .friend-requests h4{
+    color: var(--color-gray);
+    margin: 1rem 0;
+}
+.right .request{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
-    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+}
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.right .request .info p{
+    font-size: 0.85rem;
+}
+.right .request .action{
+    display: flex;
+    gap: 1rem;
 }
