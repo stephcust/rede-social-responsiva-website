@@ -2,10 +2,11 @@
 
 :root{
     /* Cores*/
+    --primary-color-hue: 252;
     --color-white: hsl(252, 30%, 100%);    
     --color-light: hsl(252, 30%, 95%);
     --color-gray: hsl(252, 15%, 65%);
-    --color-primary: hsl(252, 100%, 60%);
+    --color-primary: hsl(var(--primary-color-hue), 100%, 60%);
     --color-secondary: hsl(252, 100%, 90%);
     --color-success: hsl(120, 95%, 65%);
     --color-danger: hsl(0, 95%, 65%);
@@ -470,7 +471,7 @@ main .container .left .profile{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 50;
+    z-index: 100;
     text-align: center;
     display: grid;
     place-items: center;
@@ -482,6 +483,7 @@ main .container .left .profile{
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
+    box-shadow: 0 0 1rem var(--color-primary);
 }
     /* Tamanho da Fonte */
 .customize-theme .font-size{
@@ -574,14 +576,17 @@ main .container .left .profile{
     border: 2px solid var(--color-primary);
 }
 .customize-theme .choose-bg .bg-1{
+    text-align: center;
     background: white;
     color: black;
 }
 .customize-theme .choose-bg .bg-2{
+    text-align: center;
     background: hsl(252, 30%, 17%);
     color: white;
 }
 .customize-theme .choose-bg .bg-3{
+    text-align: center;
     background: hsl(252, 30%, 10%);
     color: white;
 }
@@ -616,10 +621,13 @@ main .container .left .profile{
     .left .btn{
         display: none;
     }
+    .customize-theme .card{
+        width: 80vw;
+    }
 }
 
 /* MEDIA QUERIES PARA TABLETS PEQUENOS E CELULARES */
-@media screen and (max-width: 992px){
+@media screen and (max-width: 750px){
     nav .search-bar{
         display: none;
     }
@@ -632,6 +640,9 @@ main .container .left .profile{
         position: fixed;
         bottom: 0;
         right: 0;
+    }
+    .left .sidebar i{
+        margin-left: 1rem;
     }
     /* Pop-up de Notificações*/
     .left .notifications-popup{
@@ -650,6 +661,23 @@ main .container .left .profile{
     }
     main .container .right{
         display: none;
+    }
+    .customize-theme{
+        background: transparent;
+        top: 3.5rem;
+        right: 2rem;
+    }
+    .customize-theme .card{
+        width: 92vw;
+    }
+    .customize-theme .font-size{
+        margin-top: 2rem;
+    }
+    .customize-theme .choose-bg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
     }
 }
 
