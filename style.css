@@ -3,15 +3,19 @@
 :root{
     /* Cores*/
     --primary-color-hue: 252;
-    --color-white: hsl(252, 30%, 100%);    
-    --color-light: hsl(252, 30%, 95%);
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+
+    --color-white: hsl(252, 30%, var(--white-color-lightness));    
+    --color-light: hsl(252, 30%, var(--light-color-lightness));
     --color-gray: hsl(252, 15%, 65%);
     --color-primary: hsl(var(--primary-color-hue), 100%, 60%);
     --color-secondary: hsl(252, 100%, 90%);
     --color-success: hsl(120, 95%, 65%);
     --color-danger: hsl(0, 95%, 65%);
     --color-black: hsl(252, 30%, 10%);
-    --color-dark: hsl(252, 30%, 17%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
 
     /*Configs*/
     --border-radius: 2rem;
@@ -611,6 +615,9 @@ main .container .left .profile{
     .left{
         width: 5rem;
         z-index: 5;
+    }
+    .left .sidebar i{
+        margin-left: 1.5rem;
     }
     main .container .left .profile{
         display: none;

@@ -19,6 +19,10 @@ const themeModal = document.querySelector('.customize-theme');
 const fontSizes = document.querySelectorAll('.choose-size span');
 let root = document.querySelector(':root');
 const colorPalette = document.querySelectorAll('.choose-color span');
+const bg1 = document.querySelector('.bg-1');
+const bg2 = document.querySelector('.bg-2');
+const bg3 = document.querySelector('.bg-3');
+
 
 // ===== Barra Lateral ======= 
 
@@ -147,3 +151,50 @@ colorPalette.forEach(color => {
         root.style.setProperty('--primary-color-hue', primaryHue);
     })
 })
+//valores do plano de fundo
+let lightColorLightness;
+let darkColorLightness;
+let whiteColorLightness;
+
+//muda o plano de fundo
+const mudaBg = () => {
+    root.style.setProperty('--light-color-lightness', lightColorLightness);
+    root.style.setProperty('--dark-color-lightness', darkColorLightness);
+    root.style.setProperty('--white-color-lightness', whiteColorLightness);
+}
+
+bg1.addEventListener('click', () => {
+    darkColorLightness = '17%';
+    lightColorLightness = '95%';
+    whiteColorLightness = '100%';
+    //adiciona classe ativa
+    bg1.classList.add('active');
+    //remove classe ativa das outras
+    bg2.classList.remove('active');
+    bg3.classList.remove('active');
+    mudaBg();
+});
+bg2.addEventListener('click', () => {
+    darkColorLightness = '95%';
+    whiteColorLightness = '20%';
+    lightColorLightness = '15%';
+    
+    //adiciona classe ativa
+    bg2.classList.add('active');
+    //remove classe ativa das outras
+    bg1.classList.remove('active');
+    bg3.classList.remove('active');
+    mudaBg();
+});
+bg3.addEventListener('click', () => {
+    darkColorLightness = '95%';
+    whiteColorLightness = '10%';
+    lightColorLightness = '0%';
+    
+    //adiciona classe ativa
+    bg3.classList.add('active');
+    //remove classe ativa das outras
+    bg1.classList.remove('active');
+    bg2.classList.remove('active');
+    mudaBg();
+});
